@@ -1,5 +1,5 @@
 export default {
-  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  // Disable server-side renderincssg: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
@@ -36,7 +36,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['bootstrap-vue/nuxt'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
