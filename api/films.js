@@ -9,73 +9,72 @@ export const films = [
   },
   {
     id: 2,
-    age: 14,
-    name: 'Shameless',
-    img: 'https://img4.goodfon.ru/wallpaper/nbig/8/e2/cameron-monaghan-ethan-cutkosky-shameless-emmy-rossum-bess-1.jpg',
+    age: 18,
+    name: 'Джентельмени',
+    img: 'https://uafilm.tv/uploads/posts/2020-04/158625728866_the_gentlemen.jpg',
     description:
-      'The series depicts the poor, dysfunctional family of Frank Gallagher, a neglectful single father of six: Fiona, Phillip, Ian, Debbie, Carl, and Liam. He spends his days drunk, high, or in search of misadventures, while his children learn to take care of themselves.',
+      'Міккі Пірсон народився і виріс в США в бідній родині, проте зміг отримати стипендію Родса і вступити до Оксфордського університету, де почав продавати марихуану своїм однокурсникам. Незабаром навчання відійшло на другий план, а Міккі зосередився на розвитку підпільного бізнесу з вирощування та продажу травички, досягнувши в результаті неймовірних успіхів. Ставши однією з найвпливовіших фігур Великобританії, він через деякий час вирішує продати прибутковий бізнес, оцінивши його в 400 мільйонів доларів, але несподівано стикається з серйозними проблемами.',
   },
   {
     id: 3,
     age: 14,
     name: 'Paper House',
-    img: 'https://img5.goodfon.com/wallpaper/nbig/7/75/bumazhnyi-dom-la-casa-de-papel-money-heist-tv-series-serial.jpg',
+    img: 'https://avatars.mds.yandex.net/get-ott/224348/2a00000169e39ef77f588ccdfe574dae8227/1344x756',
 
     description:
-      "Money Heist (Spanish: La casa de papel, [la ˈkasa ðe paˈpel], lit. 'The House of Paper') is a Spanish heist crime drama television series created by Álex Pina. The series traces two long-prepared heists led by the Professor (Álvaro Morte), one on the Royal Mint of Spain, and one on the Bank of Spain, told from the perspective of one of the robbers, Tokyo (Úrsula Corberó). The narrative is told in a real-time-like fashion and relies on flashbacks, time-jumps, hidden character motivations, and an unreliable narrator for complexity.",
+      "Культова драма «Зелена миля» знята за однойменним романом Стівена Кінга. Головну роль в картині виконав неповторний Том Хенкс. Дії фільму розгортаються в тюрмі «Холодна Гора». Одного разу в блок для засуджених до смертної кари поступає новий в'язень - Джон Коффі, засуджений за вбивство маленьких дівчаток. Коффі привертає увагу начальника цього блоку - Пола Еджкомба. За довгі роки роботи він надивився на різних злочинців, і він трохи розбирається в людях. Пол сумнівається у винності Коффі, адже не дивлячись на його страхітливий вигляд, він наділений наївною добротою і людяністю. Так само з часом з'ясовується, що Джон є володарем дивного дару - здатності зцілювати. Пол розуміє, що така людина ніяк не може бути вбивцею. Але що ж робити, і як допомогти йому? На противагу добру завжди виступає злою. Цього разу воно виступить в образі Персі - молодого тюремника, який обожнює робити життя в'язнів нестерпним.",
   },
   {
     id: 4,
-    age: 16,
-    name: 'Better Call Saul',
-    img: 'https://www.cheatsheet.com/wp-content/uploads/2020/04/better-call-saul1.jpg',
+    age: 12,
+    name: '1+1',
+    img: 'https://thumbs.dfs.ivi.ru/storage2/contents/0/e/8091320a67fabb8119ac00fdc386c5.jpg',
 
     description:
-      "Better Call Saul is an American crime and legal drama television series created by Vince Gilligan and Peter Gould. It is a spin-off, as well as both a prequel and a sequel, to Gilligan's previous series, Breaking Bad. Set primarily in the early to middle part of the first decade of the 2000s in Albuquerque, New Mexico, the series develops Jimmy McGill (Bob Odenkirk), an earnest lawyer and former con artist, into a greedy criminal defense attorney known as Saul Goodman. Also shown is the moral decline of former police officer Mike Ehrmantraut (Jonathan Banks), who becomes a violent fixer for drug traffickers to support his granddaughter and her widowed mother. The show premiered on AMC on February 8, 2015. The sixth and final season consisting of 13 episodes premiered on April 18, 2022, and concluded on August 15, 2022, after six seasons for a total of 63 episodes.",
+      'Дотепна, зворушлива та життєствердна французька комедія про дружбу хворого багатія та життєрадісного бідняка.За сюжетом, аристократ Філіп зазнав аварії під час польоту на параплані і з того моменту виявився повністю паралізованим. Він нічого не може робити самостійно і потребує постійного нагляду. Для цього Філіп наймає в доглядальниці здоровенного веселого негра з темним минулим. Іммігрант відкриває новому патрону незвіданий світ, позбавлений аристократичних умовностей і пробуджує в нещасного каліки смак до життя. Фільм «Недоторканні» або ж «1+1» (2011) буде цікаво дивитись наживо українською усім шанувальникам трагікомедій.',
   },
   {
     id: 5,
-    age: 18,
-    name: 'The Bridge',
-    img: 'https://topic.imgix.net/usq/ba0e4905-4ec9-4856-982a-f8d48d3c660d/6f5981b8-d008-4fe7-9798-94e840e69274.jpeg?auto=compress,format&cs=srgb&h=781&_=0c8c771cf95a53a6108f640a1307dad6&bg=%23ffffff',
-
+    age: 16,
+    name: 'Острів проклятих',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4nwEVEC4rdcYQCCakpFkgEIZVBHqJsGufAA&usqp=CAU',
     description:
-      'When a body is found on the bridge between Denmark and Sweden, right on the border, Danish inspector Martin Rohde and Swedish Saga Norén have to share jurisdiction and work together to find the killer.',
+      'Неймовірно крутий психологічний трилер неперевершеного Мартіна Скорсезе про заплутану детективну історію, що розігралася на фоні похмурих декорацій ізольованої на острові вязниці для божевільних злочинців. Події розгортаються у 1950-і роки. За сюжетом, два федеральних маршали  прибувають на острів, де знаходиться психіатрична лікарня для небезпечних злочинців. Їм належить розслідувати можливу втечу однієї з пацієнток, вбивці власних дітей, яка загадковим чином просто зникла із замкненої палати. Невдовзі маршалам починає здаватись, що на похмурому острові навіть лікарський персонал не зовсім здоровий, але правда виявляється ще більш шокуючою…',
   },
   {
     id: 6,
-    age: 14,
-    name: 'The end of the fun***in world',
-    img: 'https://flxt.tmsimg.com/assets/p14695238_b_h8_aa.jpg',
+    age: 16,
+    name: 'Бетмен',
+    img: 'https://lifehacker.ru/wp-content/uploads/2019/10/Polnyj-gid-po-vsem-filmam-i-teleserialam-o-Betmene_1570140886.jpg',
 
     description:
-      'A budding teen psychopath and a rebel hungry for adventure embark on a star-crossed road trip in this darkly comic series based on a graphic novel.',
+      'У Готемі знову зявляється новий таємничий злодій. На місці злочину він залишає послання для Бетмена. Поліція не може самостійно вести розслідування, тому доводиться в черговий раз звертатися до похмурого героя. Брюса Вейна турбує те, що йому зрозумілі і близькі мотиви лиходія. Він прагне вивести на чисту воду всіх людей, які перебувають при владі і які загрузли в брехні. Вони прикриваються благими намірами і добрими вчинками, але в дійсності їх цікавлять тільки влада і гроші. Бетмен сам не раз стикався з тим, що в багатьох бідах міста винні саме люди, які перебувають при владі, які є невідємною частиною злочинного світу. Брюс Вейн сумнівається у власних переконаннях і цілях, не дивлячись на це, незабаром йому належить знов зробити непростий вибір...',
   },
   {
     id: 7,
-    age: 12,
-    name: 'Fargo',
-    img: 'https://images-na.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T1/images/S/pv-target-images/7cac9754ca4ca052b72a0cc7a1d067f3aa829b40f151270ccc3463501d145c95._SX1080_.jpg',
+    age: 16,
+    name: 'Одного разу в Голівуді',
+    img: 'https://planetakino.ua/res/get-poster/00000000000000000000000000001822/big.jpg',
 
     description:
-      'A drifter brings trouble to small-town Minnesota in this adaptation of the 1996 Coen brothers film..',
+      'Одні з найбільш очікуваних подій в світі кіно - це завжди фільми Квентіна Тарантіно, і ось метр трилера і кривавих історій представляє свою девяту роботу в кіно під назвою «Одного разу ... в Голлівуді». Дія відбувається влітку 1969, героями фільму стали колишня зірка вестернів Рік Далтон у виконанні ролі Леонардо Ді Капріо, а також його багаторічний дублер Кліф Бут, якого зіграв Бред Пітт. Напружений сюжет кінокартини розгортається навколо кривавих дій серійного вбивці Чарльза Менсона і його секти ...Сюжет цей заснований на реальних подіях, адже тоді була убита актриса Шарон Тейт, і зроблено це було руками членів даної кривавої секти. Але ці події стали лише поштовхом для «фірмової» кінооповіді Тарантіно, яка невловимо нагадує його найперший фільм «Кримінальне чтиво». Так що дивитися те, що розгортається на екрані, глядачеві дуже цікаво, напружено, криваво і досить похмуро. Але такий Квентін Тарантіно в кіно, і його творчість продовжує зачаровувати ...',
   },
   {
     id: 8,
-    age: 14,
-    name: 'Sex education',
-    img: 'https://itc.ua/wp-content/uploads/2020/01/sex-education.jpg',
+    age: 16,
+    name: 'Джокер',
+    img: 'https://apostrophe.ua/uploads/06092019/1da78b64d319aee1a469498977af0d1e.jpg',
 
     description:
-      'Thanks to his mother, who works as a sex therapist, insecure Otis knows the answers to all his questions about sex. Therefore, the rebel Maeve offers him to open a sex therapy clinic.',
+      'Кінофільм "Джокер" - серйозна психологічна драма, яка доведе - Комікси можуть бути дуже серйозними. Історія розповість про звичайного чоловіка Артура Флека, який, як і тисячі інших людей пробує реалізуватися у великому місті. У чоловіка постійні проблеми з роботою, він ходить до психіатра, удома його чекає старенька матір. Навколо героя суцільний негатив і це просто зводить його з розуму. Та у кожного є мрія. У Артура вона є також. Він бажає жартувати і бути стендап коміком. Попри всю важкість свого становища, чоловік бажає веселити публіку. Але і тут не все пройде так, як він очікував. Події фільму охоплять той відрізок його життя, де все піде не за планом. Чоловіка чекають великі потрясіння, великі зміни і що з цього вийде - побачить кожен глядач переглянувши фільм.Режисер Тодд Філіпс дав кожному глядачу простір для уяви та роздумів, тому фільм буде потрактований багатьма людьми по різному. Для когось Артур - соціопат, якого зламало суспільство. Для когось - жорстокий убивця. Хто ж він насправді, цей Джокер? Питання завжди залишиться нерозгаданим. Після виходу фільму на великі екрани виявилось, що він був вкрай неоднозначним і викликав у глядачів бурю емоцій. Аудиторія поділилась на два фронти: одні розуміли, підтримували та співчували Артуру Флеку. Інші ж засудили джокера і назвали його справжнісінькою хворобою суспільства. Одні сприйняли фільм, як гарну адаптацію, а інші в свою чергу заявили про не канонічність образу. Тому спробуйте переглянути фільм, та скласти своє власне враження від перегляду. Фільм однозначно вартий Вашої уваги!',
   },
   {
     id: 9,
-    age: 14,
-    name: 'Wayne',
-    img: 'https://images-na.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T1/images/S/pv-target-images/07c529fa2f2f2d7bc8a289cb12291188199f4f9e13048ac57c0b24483f3ca7a0._RI_.jpg',
+    age: 18,
+    name: 'Астрал',
+    img: 'https://thumbs.dfs.ivi.ru/storage2/contents/4/6/fac150c7d893f723e84dacef0f033f.jpg',
 
     description:
-      "Wayne, a 16 year-old Dirty Harry with a heart of gold, sets out on a small two stroke road bike from Boston to Florida with his new friend Del to get back their wicked-hot 79' Trans-Am that was stolen from his father before he died.",
+      "Містичний фільм «Астрал» познайомить глядачів з загадками потойбічного світу. Головними героями картини виступають члени сім'ї викладача Джоша: його дружина Рене і троє їхніх дітей. Після переїзду в новий будинок, Рене зауважує дивні речі, що відбуваються в ньому. Одного разу її син Далтон забирається на горище і ненавмисно падає звідти. Наступного ранку дитина не може навіть прокинутися. Лікарі, викликані його батьками, точний діагноз хлопчика не встановлюють. Рене вмовляє Джоша перебратися в інший будинок, вважаючи його причиною усіх нещасть, що звалилися на сімейство. У новому житлі все повторюється знову: паранормальні явища і раніше переслідують господарів. Зневірившись, Рене запрошує фахівця з області привидів Еліс Рейнер. Оглянувши Далтона, вона розповідає батькам про астрал, в який потрапила його душа, завдяки надзвичайним здібностям. Виявляється, хлопчик і раніше міг туди проникати, але завжди повертався назад ...",
   },
 ]

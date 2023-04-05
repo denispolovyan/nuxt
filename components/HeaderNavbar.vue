@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
 .header-navbar {
-  padding: 0px 30px;
+  padding: 0px 40px;
   background-color: #2c261e;
   color: #fff;
 }
