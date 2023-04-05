@@ -2,7 +2,7 @@
   <div class="header-navbar">
     <div class="header-navbar__body">
       <div class="header-navbar__logo">
-        <nuxt-link to="/" class="header-navbar__logo_text">Nuxt</nuxt-link>
+        <nuxt-link to="/films" class="header-navbar__logo_text">Nuxt</nuxt-link>
       </div>
 
       <div class="header-navbar__content">
@@ -14,10 +14,10 @@
           ></b-form-input>
         </div>
         <div class="header-navbar__item">
-          <nuxt-link v-if="$store.getters.getUserInfo" to="UserInfo"
+          <nuxt-link v-if="$store.getters.getUserInfo" to="user-info"
             ><b-button size="sm">Watch profile</b-button></nuxt-link
           >
-          <nuxt-link v-else to="UserAuth"
+          <nuxt-link v-else to="user-auth"
             ><b-button size="sm">Sign in</b-button></nuxt-link
           >
         </div>
@@ -29,6 +29,10 @@
 <script>
 export default {
   created() {
+    // router
+    this.$router.push('/films')
+
+    // user info
     const userInfo = localStorage.getItem('user-info')
     if (userInfo) {
       this.$store.commit('setUserInfo', JSON.parse(userInfo))
