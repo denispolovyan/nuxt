@@ -27,7 +27,7 @@
 </template>
 
 <script>
-// import { films } from '~/api/films'
+import { films } from '~/api/films'
 
 export default {
   created() {
@@ -41,8 +41,19 @@ export default {
     }
 
 	//  films
-	// const films = films;
-	// console.log(films)
+	const loadedFilms = films;
+	this.$store.commit("setFilms", loadedFilms);
+
+	// sessions
+	const sessions = [];
+	loadedFilms.forEach(element => {
+		sessions.push(element.sessions);
+	});
+	this.$store.commit("setSessions", sessions);
+
+
+
+	
   },
 }
 </script>

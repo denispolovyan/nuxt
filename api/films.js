@@ -45,7 +45,7 @@ export const films = [
       sun: { day: 'Sunday', hall: 1, time: '9:30', price: 100 },
     },
     age: 14,
-    name: 'Paper House',
+    name: 'Зелена миля',
     img: 'https://avatars.mds.yandex.net/get-ott/224348/2a00000169e39ef77f588ccdfe574dae8227/1344x756',
 
     description:

@@ -1,7 +1,11 @@
 <template>
   <div class="films">
     <div class="films__body">
-      <div class="film-card" v-for="(film, idx) in films" :key="idx">
+      <div
+        class="film-card"
+        v-for="(film, idx) in $store.getters.getFilms"
+        :key="idx"
+      >
         <div class="film-card__img">
           <img :src="film.img" :alt="film.name" />
         </div>
@@ -19,7 +23,6 @@
 </template>
 
 <script>
-import { films } from '~/api/films'
 export default {
   data: () => {
     return {
@@ -31,14 +34,10 @@ export default {
       this.$router.push(`/films/${id}`)
     },
   },
-  created() {
-    this.films = films;
-  },
 }
 </script>
 
 <style scoped>
-
 .films__body {
   display: flex;
   flex-wrap: wrap;
@@ -47,19 +46,21 @@ export default {
 }
 
 .film-card {
+	background-color: #e7efff;
   display: flex;
   flex: 0 0 24%;
   flex-direction: column;
   border: 1px solid #7a7672;
-  border-radius: 10px;
+  border-radius: 0px 0px 10px 10px;
 }
 .film-card__img img {
   width: 100%;
   height: auto;
-  border-radius: 10px 10px 0px 0px;
+  margin-bottom: 10px;
 }
 .film-card__img {
-  flex: 1 1 100%;
+  display: block;
+  margin: auto 0px;
   align-items: center;
 }
 .film-card__name {
