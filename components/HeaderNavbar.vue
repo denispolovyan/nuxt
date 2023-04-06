@@ -9,7 +9,7 @@
         <div class="header-navbar__item">
           <b-form-input
             size="sm"
-            class="mr-sm-2"
+            class="mr-sm-2 header-navbar__filter"
             placeholder="Search"
           ></b-form-input>
         </div>
@@ -40,20 +40,16 @@ export default {
       this.$store.commit('setUserInfo', JSON.parse(userInfo))
     }
 
-	//  films
-	const loadedFilms = films;
-	this.$store.commit("setFilms", loadedFilms);
+    //  films
+    const loadedFilms = films
+    this.$store.commit('setFilms', loadedFilms)
 
-	// sessions
-	const sessions = [];
-	loadedFilms.forEach(element => {
-		sessions.push(element.sessions);
-	});
-	this.$store.commit("setSessions", sessions);
-
-
-
-	
+    // sessions
+    const sessions = []
+    loadedFilms.forEach((element) => {
+      sessions.push(element.sessions)
+    })
+    this.$store.commit('setSessions', sessions)
   },
 }
 </script>
@@ -80,5 +76,13 @@ export default {
   align-items: center;
   display: flex;
   gap: 10px;
+}
+@media (max-width: 1050px) {
+  .header-navbar {
+    padding: 0px 20px;
+  }
+  .header-navbar__filter {
+    width: 130px;
+  }
 }
 </style>

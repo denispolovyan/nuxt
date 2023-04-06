@@ -38,6 +38,9 @@ export default {
 </script>
 
 <style scoped>
+.films {
+  padding: 40px;
+}
 .films__body {
   display: flex;
   flex-wrap: wrap;
@@ -46,7 +49,7 @@ export default {
 }
 
 .film-card {
-	background-color: #e7efff;
+  background-color: #e7efff;
   display: flex;
   flex: 0 0 24%;
   flex-direction: column;
@@ -93,6 +96,9 @@ export default {
   .film-card__img img {
     width: 100%;
     height: auto;
+  }
+  .films {
+    padding: 20px;
   }
 }
 </style>

@@ -8,7 +8,4 @@
 </template>
 
 <style scoped>
-.app-container {
-  padding: 40px;
-}
 </style>

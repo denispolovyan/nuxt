@@ -35,6 +35,7 @@ export default {
 
 <style scoped>
 .current-film {
+  padding: 40px;
   margin: 0px auto;
   max-width: 900px;
 }
@@ -48,8 +49,19 @@ export default {
   width: 900px;
   margin-bottom: 10px;
 }
+
 .current-film__text {
   margin-bottom: 10px;
   line-height: 26px;
+}
+.current-film__dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+@media (max-width: 1050px) {
+  .current-film {
+    padding: 20px;
+  }
 }
 </style>
