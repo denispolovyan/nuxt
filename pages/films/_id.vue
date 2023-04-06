@@ -50,5 +50,6 @@ export default {
 .current-film__text {
   margin-bottom: 10px;
   line-height: 26px;
+  
 }
 </style>
