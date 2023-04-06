@@ -27,6 +27,8 @@
 </template>
 
 <script>
+// import { films } from '~/api/films'
+
 export default {
   created() {
     // router
@@ -37,6 +39,10 @@ export default {
     if (userInfo) {
       this.$store.commit('setUserInfo', JSON.parse(userInfo))
     }
+
+	//  films
+	// const films = films;
+	// console.log(films)
   },
 }
 </script>

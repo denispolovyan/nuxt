@@ -1,7 +1,9 @@
 export default {
   state() {
     return {
-      userInfo: '',
+      userInfo: [],
+      films: [],
+      sessions: [],
     }
   },
   getters: {
@@ -11,10 +13,16 @@ export default {
   },
   mutations: {
     setUserInfo(state, userInfo) {
-      state.userInfo = userInfo;
+      state.userInfo = userInfo
     },
-	 deleteUserInfo(state) {
-      state.userInfo = '';
-    }
-  }
+    setFilms(state, films) {
+      state.films = films;
+    },
+	 setSessions(state, films) {
+      state.films = films;
+    },
+    deleteUserInfo(state) {
+      state.userInfo = ''
+    },
+  },
 }

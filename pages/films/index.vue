@@ -1,7 +1,7 @@
 <template>
   <div class="films">
     <div class="films__body">
-      <div class="film-card" v-for="film in films" :key="film">
+      <div class="film-card" v-for="(film, idx) in films" :key="idx">
         <div class="film-card__img">
           <img :src="film.img" :alt="film.name" />
         </div>
@@ -9,7 +9,9 @@
           {{ film.name }}
         </div>
         <div class="film-card__button">
-          <button class="btn btn-primary">More info</button>
+          <button class="btn btn-primary" @click="switchToCurrentFilm(film.id)">
+            More info
+          </button>
         </div>
       </div>
     </div>
@@ -24,16 +26,19 @@ export default {
       films: [],
     }
   },
+  methods: {
+    switchToCurrentFilm(id) {
+      this.$router.push(`/films/${id}`)
+    },
+  },
   created() {
-    this.films = films
-    console.log(films)
+    this.films = films;
   },
 }
 </script>
 
 <style scoped>
-.films {
-}
+
 .films__body {
   display: flex;
   flex-wrap: wrap;
