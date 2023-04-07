@@ -11,7 +11,7 @@
         <p>Price: {{ sessionInfo.price }}грн</p>
       </div>
       <div class="hall">
-        <div class="hall__place" v-for="(place, idx) in hall" :key="idx">
+        <div class="hall__place" v-for="(place, idx) in halls" :key="idx">
           <button
             class="hall__button"
             :class="{
@@ -37,7 +37,11 @@ export default {
   },
   created() {
     // halls
-    this.hall = this.$store.getters.getHalls
+    const halls = this.$store.getters.getHalls
+    this.halls = halls
+      .find((t) => t.id === this.$route.params.id)
+      .places.find((t) => t.day === this.$route.params.day).seats
+    console.log(this.halls)
 
     //  sessions
     const sessions = this.$store.getters.getSessions
@@ -72,12 +76,14 @@ export default {
 .hall__button {
   background-color: #fff;
   height: 40px;
-  width: 40px;
-  border-radius: 50%;
+  width: 60px;
+  border: 1px solid #000;
+  border-radius: 40px;
+  font-weight: 500;
 }
 .hall__button:hover {
   transition-duration: 0.5s;
-  background-color: green;
+  background-color: #43fb84;
 }
 .date {
   padding: 0px 26px;
@@ -98,6 +104,6 @@ export default {
 }
 /* selected  */
 .hall__place_selected {
-  background-color: red !important;
+  background-color: #ea5e4b !important;
 }
 </style>
