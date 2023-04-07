@@ -14,11 +14,14 @@
           ></b-form-input>
         </div>
         <div class="header-navbar__item">
-          <nuxt-link v-if="$store.getters.getUserInfo" to="user-info"
-            ><b-button size="sm">Watch profile</b-button></nuxt-link
+          <b-button
+            size="sm"
+            v-if="$store.getters.getUserInfo"
+            @click="$router.push('/user-info')"
+            >Watch profile</b-button
           >
-          <nuxt-link v-else to="user-auth"
-            ><b-button size="sm">Sign in</b-button></nuxt-link
+          <b-button size="sm" v-else @click="$router.push('/user-auth')"
+            >Sign in</b-button
           >
         </div>
       </div>
@@ -28,6 +31,8 @@
 
 <script>
 import { films } from '~/api/films'
+import { sessions } from '~/api/sessions'
+import { halls } from '~/api/halls'
 
 export default {
   created() {
@@ -44,12 +49,13 @@ export default {
     const loadedFilms = films
     this.$store.commit('setFilms', loadedFilms)
 
-    // sessions
-    const sessions = []
-    loadedFilms.forEach((element) => {
-      sessions.push(element.sessions)
-    })
-    this.$store.commit('setSessions', sessions)
+    //  sessions
+    const loadedSessions = sessions
+    this.$store.commit('setSessions', loadedSessions)
+
+    //  halls
+    const loadedHalls = halls
+    this.$store.commit('setHalls', loadedHalls)
   },
 }
 </script>

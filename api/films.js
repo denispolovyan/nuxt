@@ -1,15 +1,6 @@
 export const films = [
   {
     id: '1',
-    sessions: {
-      mon: { day: 'Monday', hall: 1, time: '10:30', price: 80 },
-      tues: { day: 'Tuesday', hall: 1, time: '14:30', price: 120 },
-      weed: { day: 'Wednesday', hall: 1, time: '17:00', price: 120 },
-      thurs: { day: 'Thursday', hall: 1, time: '22:30', price: 80 },
-      fri: { day: 'Friday', hall: 1, time: '15:30', price: 140 },
-      sat: { day: 'Saturday', hall: 1, time: '14:00', price: 180 },
-      sun: { day: 'Sunday', hall: 1, time: '9:30', price: 100 },
-    },
     age: 12,
     name: 'Аватар 2: Шлях Води',
     img: 'https://multiplex.ua/images/6a/1e/6a1e43023c8118984237263761c62197.jpeg',
@@ -18,15 +9,6 @@ export const films = [
   },
   {
     id: '2',
-    sessions: {
-      mon: { day: 'Monday', hall: 1, time: '10:30', price: 80 },
-      tues: { day: 'Tuesday', hall: 1, time: '14:30', price: 120 },
-      weed: { day: 'Wednesday', hall: 1, time: '17:00', price: 120 },
-      thurs: { day: 'Thursday', hall: 1, time: '22:30', price: 80 },
-      fri: { day: 'Friday', hall: 1, time: '15:30', price: 140 },
-      sat: { day: 'Saturday', hall: 1, time: '14:00', price: 180 },
-      sun: { day: 'Sunday', hall: 1, time: '9:30', price: 100 },
-    },
     age: 18,
     name: 'Джентельмени',
     img: 'https://nzl.theukrainians.org/wp-content/uploads/2019/10/Dzhentlmeny-5-e1570096086555.jpg',
@@ -35,15 +17,6 @@ export const films = [
   },
   {
     id: '3',
-    sessions: {
-      mon: { day: 'Monday', hall: 1, time: '10:30', price: 80 },
-      tues: { day: 'Tuesday', hall: 1, time: '14:30', price: 120 },
-      weed: { day: 'Wednesday', hall: 1, time: '17:00', price: 120 },
-      thurs: { day: 'Thursday', hall: 1, time: '22:30', price: 80 },
-      fri: { day: 'Friday', hall: 1, time: '15:30', price: 140 },
-      sat: { day: 'Saturday', hall: 1, time: '14:00', price: 180 },
-      sun: { day: 'Sunday', hall: 1, time: '9:30', price: 100 },
-    },
     age: 14,
     name: 'Зелена миля',
     img: 'https://avatars.mds.yandex.net/get-ott/224348/2a00000169e39ef77f588ccdfe574dae8227/1344x756',
@@ -53,15 +26,6 @@ export const films = [
   },
   {
     id: '4',
-    sessions: {
-      mon: { day: 'Monday', hall: 1, time: '10:30', price: 80 },
-      tues: { day: 'Tuesday', hall: 1, time: '14:30', price: 120 },
-      weed: { day: 'Wednesday', hall: 1, time: '17:00', price: 120 },
-      thurs: { day: 'Thursday', hall: 1, time: '22:30', price: 80 },
-      fri: { day: 'Friday', hall: 1, time: '15:30', price: 140 },
-      sat: { day: 'Saturday', hall: 1, time: '14:00', price: 180 },
-      sun: { day: 'Sunday', hall: 1, time: '9:30', price: 100 },
-    },
     age: 12,
     name: '1+1',
     img: 'https://thumbs.dfs.ivi.ru/storage2/contents/0/e/8091320a67fabb8119ac00fdc386c5.jpg',
@@ -71,15 +35,6 @@ export const films = [
   },
   {
     id: '5',
-    sessions: {
-      mon: { day: 'Monday', hall: 1, time: '10:30', price: 80 },
-      tues: { day: 'Tuesday', hall: 1, time: '14:30', price: 120 },
-      weed: { day: 'Wednesday', hall: 1, time: '17:00', price: 120 },
-      thurs: { day: 'Thursday', hall: 1, time: '22:30', price: 80 },
-      fri: { day: 'Friday', hall: 1, time: '15:30', price: 140 },
-      sat: { day: 'Saturday', hall: 1, time: '14:00', price: 180 },
-      sun: { day: 'Sunday', hall: 1, time: '9:30', price: 100 },
-    },
     age: 16,
     name: 'Острів проклятих',
     img: 'https://i.ytimg.com/vi/7iBppRp0FN4/maxresdefault.jpg',
@@ -88,15 +43,6 @@ export const films = [
   },
   {
     id: '6',
-    sessions: {
-      mon: { day: 'Monday', hall: 1, time: '10:30', price: 80 },
-      tues: { day: 'Tuesday', hall: 1, time: '14:30', price: 120 },
-      weed: { day: 'Wednesday', hall: 1, time: '17:00', price: 120 },
-      thurs: { day: 'Thursday', hall: 1, time: '22:30', price: 80 },
-      fri: { day: 'Friday', hall: 1, time: '15:30', price: 140 },
-      sat: { day: 'Saturday', hall: 1, time: '14:00', price: 180 },
-      sun: { day: 'Sunday', hall: 1, time: '9:30', price: 100 },
-    },
     age: 16,
     name: 'Бетмен',
     img: 'https://lifehacker.ru/wp-content/uploads/2019/10/Polnyj-gid-po-vsem-filmam-i-teleserialam-o-Betmene_1570140886.jpg',
@@ -106,15 +52,6 @@ export const films = [
   },
   {
     id: '7',
-    sessions: {
-      mon: { day: 'Monday', hall: 1, time: '10:30', price: 80 },
-      tues: { day: 'Tuesday', hall: 1, time: '14:30', price: 120 },
-      weed: { day: 'Wednesday', hall: 1, time: '17:00', price: 120 },
-      thurs: { day: 'Thursday', hall: 1, time: '22:30', price: 80 },
-      fri: { day: 'Friday', hall: 1, time: '15:30', price: 140 },
-      sat: { day: 'Saturday', hall: 1, time: '14:00', price: 180 },
-      sun: { day: 'Sunday', hall: 1, time: '9:30', price: 100 },
-    },
     age: 16,
     name: 'Одного разу в Голівуді',
     img: 'https://planetakino.ua/res/get-poster/00000000000000000000000000001822/big.jpg',
@@ -124,15 +61,6 @@ export const films = [
   },
   {
     id: '8',
-    sessions: {
-      mon: { day: 'Monday', hall: 1, time: '10:30', price: 80 },
-      tues: { day: 'Tuesday', hall: 1, time: '14:30', price: 120 },
-      weed: { day: 'Wednesday', hall: 1, time: '17:00', price: 120 },
-      thurs: { day: 'Thursday', hall: 1, time: '22:30', price: 80 },
-      fri: { day: 'Friday', hall: 1, time: '15:30', price: 140 },
-      sat: { day: 'Saturday', hall: 1, time: '14:00', price: 180 },
-      sun: { day: 'Sunday', hall: 1, time: '9:30', price: 100 },
-    },
     age: 16,
     name: 'Джокер',
     img: 'https://apostrophe.ua/uploads/06092019/1da78b64d319aee1a469498977af0d1e.jpg',
@@ -142,15 +70,6 @@ export const films = [
   },
   {
     id: '9',
-    sessions: {
-      mon: { day: 'Monday', hall: 1, time: '10:30', price: 80 },
-      tues: { day: 'Tuesday', hall: 1, time: '14:30', price: 120 },
-      weed: { day: 'Wednesday', hall: 1, time: '17:00', price: 120 },
-      thurs: { day: 'Thursday', hall: 1, time: '22:30', price: 80 },
-      fri: { day: 'Friday', hall: 1, time: '15:30', price: 140 },
-      sat: { day: 'Saturday', hall: 1, time: '14:00', price: 180 },
-      sun: { day: 'Sunday', hall: 1, time: '9:30', price: 100 },
-    },
     age: 18,
     name: 'Астрал',
     img: 'https://thumbs.dfs.ivi.ru/storage2/contents/4/6/fac150c7d893f723e84dacef0f033f.jpg',

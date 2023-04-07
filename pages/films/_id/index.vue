@@ -9,11 +9,12 @@
     </div>
     <div class="current-film__dates">
       <b-button
-        variant="secondary"
-        v-for="(day, idx) in film.sessions"
+        v-for="(day, idx) in sessions"
         :key="idx"
-        >{{ day.day }}</b-button
-      >
+        @click="switchToSessions(day.idx)"
+        variant="secondary"
+        >{{ day.day }}
+      </b-button>
     </div>
   </div>
 </template>
@@ -23,12 +24,24 @@ export default {
   data: () => {
     return {
       film: '',
+      sessions: '',
     }
+  },
+  methods: {
+    switchToSessions(day) {
+      this.$router.push(`/films/${this.$route.params.id}/${day}`)
+    },
   },
   created() {
     // current film
     const films = this.$store.getters.getFilms
     this.film = films.find((film) => film.id === this.$route.params.id)
+
+    // sessions
+    const sessions = this.$store.getters.getSessions;
+    this.sessions = sessions.find(
+      (session) => session.id === this.$route.params.id
+    ).sessions
   },
 }
 </script>
