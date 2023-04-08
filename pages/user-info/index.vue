@@ -29,7 +29,7 @@ export default {
     deleteUser() {
       const isDelete = confirm(`Delete user ${this.userInfo.name}`)
       if (isDelete) {
-        this.$router.push('/')
+        this.$router.push('/films')
         this.$store.commit('deleteUserInfo')
         localStorage.removeItem('user-info')
       }

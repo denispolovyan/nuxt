@@ -6,7 +6,7 @@
       </div>
 
       <div class="header-navbar__content">
-        <div class="header-navbar__item">
+        <div class="header-navbar__item" v-if="$route.path === '/films'">
           <b-form-input
             size="sm"
             class="mr-sm-2 header-navbar__filter"
@@ -47,6 +47,7 @@ export default {
     },
   },
   created() {
+    // console.log(this.$route.path)
     // router
     this.$router.push('/films')
 
@@ -68,6 +69,15 @@ export default {
     //  halls
     const loadedHalls = halls
     this.$store.commit('setHalls', loadedHalls)
+
+    //  selected sessions
+    const selectedSessions = localStorage.getItem('selected-sessions')
+    if (selectedSessions) {
+      const sessions = JSON.parse(selectedSessions)
+      sessions.forEach((t) => {
+        this.$store.commit('setSelectedSessions', t)
+      })
+    }
   },
 }
 </script>

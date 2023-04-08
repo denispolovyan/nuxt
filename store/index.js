@@ -6,6 +6,7 @@ export default {
       filteredFilms: [],
       sessions: [],
       halls: [],
+      selectedSessions: [],
     }
   },
   getters: {
@@ -24,6 +25,9 @@ export default {
     getHalls(state) {
       return state.halls
     },
+    getSelectedSessions(state) {
+      return state.selectedSessions
+    },
   },
   mutations: {
     setUserInfo(state, userInfo) {
@@ -33,7 +37,7 @@ export default {
       state.films = films
     },
     setFilteredFilms(state, filter) {
-      state.filteredFilms = state.films.filter(t => t.name.includes(filter));
+      state.filteredFilms = state.films.filter((t) => t.name.includes(filter))
     },
     setSessions(state, sessions) {
       state.sessions = sessions
@@ -41,6 +45,9 @@ export default {
     setHalls(state, halls) {
       state.halls = halls
     },
+	 setSelectedSessions(state, session){
+		state.selectedSessions.push(session);
+	 },
     deleteUserInfo(state) {
       state.userInfo = ''
     },

@@ -13,6 +13,8 @@
       <div class="hall">
         <div class="hall__place" v-for="(place, idx) in halls" :key="idx">
           <button
+            :disabled="place"
+            @click="selectSession(idx + 1)"
             class="hall__button"
             :class="{
               hall__place_selected: place,
@@ -35,13 +37,36 @@ export default {
       film: '',
     }
   },
+  methods: {
+    selectSession(idx) {
+      const confirmation = confirm(`Do you want to book ${idx} place ?`)
+      if (confirmation) {
+        const session = {
+          place: idx,
+          day: this.sessionInfo.day,
+          time: this.sessionInfo.time,
+          name: this.film.name,
+        }
+
+        // container for sessions
+        const loadedSessions = this.$store.getters.getSelectedSessions
+        const selectedSessions = Object.assign([], loadedSessions)
+        selectedSessions.push(session)
+
+        localStorage.setItem(
+          'selected-sessions',
+          JSON.stringify(selectedSessions)
+        )
+        this.$store.commit('setSelectedSessions', session)
+      }
+    },
+  },
   created() {
     // halls
     const halls = this.$store.getters.getHalls
     this.halls = halls
       .find((t) => t.id === this.$route.params.id)
       .places.find((t) => t.day === this.$route.params.day).seats
-    console.log(this.halls)
 
     //  sessions
     const sessions = this.$store.getters.getSessions
@@ -52,6 +77,7 @@ export default {
     // films
     const films = this.$store.getters.getFilms
     this.film = films.find((t) => t.id === this.$route.params.id)
+
   },
 }
 </script>
