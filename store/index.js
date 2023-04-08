@@ -3,6 +3,7 @@ export default {
     return {
       userInfo: [],
       films: [],
+      filteredFilms: [],
       sessions: [],
       halls: [],
     }
@@ -13,6 +14,9 @@ export default {
     },
     getFilms(state) {
       return state.films
+    },
+    getFilteredFilms(state) {
+      return state.filteredFilms
     },
     getSessions(state) {
       return state.sessions
@@ -27,6 +31,9 @@ export default {
     },
     setFilms(state, films) {
       state.films = films
+    },
+    setFilteredFilms(state, filter) {
+      state.filteredFilms = state.films.filter(t => t.name.includes(filter));
     },
     setSessions(state, sessions) {
       state.sessions = sessions

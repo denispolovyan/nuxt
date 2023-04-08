@@ -11,6 +11,7 @@
             size="sm"
             class="mr-sm-2 header-navbar__filter"
             placeholder="Search"
+            v-model="filter"
           ></b-form-input>
         </div>
         <div class="header-navbar__item">
@@ -35,6 +36,16 @@ import { sessions } from '~/api/sessions'
 import { halls } from '~/api/halls'
 
 export default {
+  data: () => {
+    return {
+      filter: '',
+    }
+  },
+  watch: {
+    filter() {
+      this.$store.commit('setFilteredFilms', this.filter)
+    },
+  },
   created() {
     // router
     this.$router.push('/films')
@@ -45,9 +56,10 @@ export default {
       this.$store.commit('setUserInfo', JSON.parse(userInfo))
     }
 
-    //  films
+    //  films and filteredFilms
     const loadedFilms = films
     this.$store.commit('setFilms', loadedFilms)
+    this.$store.commit('setFilteredFilms', this.filter)
 
     //  sessions
     const loadedSessions = sessions
