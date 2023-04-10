@@ -2,16 +2,23 @@
   <div class="user-info">
     <div class="user-info__body">
       <div class="card">
-        <div class="card-body">
-          <p class="card-text">{{ userInfo.name }}</p>
-          <p class="card-text">{{ userInfo.email }}</p>
-          <b-button variant="dark" size="sm" @click="deleteUser"
-            >Sign out</b-button
-          >
+        <div class="card__body">
+          <div class="card__left">
+            <p class="card-text">{{ userInfo.name }}</p>
+            <p class="card-text">{{ userInfo.email }}</p>
+            <b-button variant="dark" size="sm" @click="deleteUser"
+              >Sign out</b-button
+            >
+          </div>
+          <div class="card__right">
+            <p class="card-text">Age: {{ userInfo.age }}</p>
+            <p class="card-text">{{ userInfo.phone }}</p>
+            <p class="card-text">City: {{ userInfo.city }}</p>
+          </div>
         </div>
       </div>
-      <div class="sessions">
-        <div class="session_main" v-if="$store.getters.getSelectedSessions">
+      <div class="sessions" v-if="$store.getters.getSelectedSessions.length">
+        <div class="session_main">
           <div class="session__name session__item">Name</div>
           <div class="session__day session__item_narrow">Day</div>
           <div class="session__time session__item_narrow">Time</div>
@@ -20,7 +27,7 @@
         </div>
         <div class="sessions-body">
           <div
-			  @click="deleteSession(session)"
+            @click="deleteSession(session)"
             class="session"
             v-for="(session, idx) in $store.getters.getSelectedSessions"
             :key="idx"
@@ -101,10 +108,23 @@ export default {
 
 /* card  */
 .card {
-  display: inline-flex;
-  flex-direction: column;
+  text-align: center;
+  width: 730px;
+  margin: 0px auto;
 }
-
+.card__body {
+  padding: 16px;
+  display: flex;
+  flex: 0 0 50%;
+}
+.card__left {
+  flex: 0 0 50%;
+  border-right: 1px solid #000;
+}
+.card__right {
+  flex: 0 0 50%;
+  padding-left: 16px;
+}
 /* sessions  */
 .sessions {
   margin: 20px auto;
@@ -131,7 +151,7 @@ export default {
   display: flex;
 }
 .session:hover {
-	transition-duration: 0.3s;
+  transition-duration: 0.3s;
   border-bottom: 2px solid #76777c;
 }
 .session__item {

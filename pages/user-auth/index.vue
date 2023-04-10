@@ -47,6 +47,51 @@
                             >
                           </div>
                         </div>
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input
+                              id="form3Example1c"
+                              v-model="form.phone"
+                              type="tel"
+                              class="form-control"
+                              maxlength="30"
+                            />
+                            <label class="form-label" for="form3Example1c"
+                              >Your Phone</label
+                            >
+                          </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input
+                              id="form3Example1c"
+                              v-model="form.age"
+                              type="text"
+                              class="form-control"
+                              maxlength="2"
+                            />
+                            <label class="form-label" for="form3Example1c"
+                              >Your Age</label
+                            >
+                          </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input
+                              id="form3Example1c"
+                              v-model="form.city"
+                              type="text"
+                              class="form-control"
+                              maxlength="30"
+                            />
+                            <label class="form-label" for="form3Example1c"
+                              >Your city</label
+                            >
+                          </div>
+                        </div>
 
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
@@ -127,6 +172,9 @@ export default {
       form: {
         name: '',
         email: '',
+		  phone: '',
+		  age: '',
+		  city: '',
         password: '',
         passwordConfirmation: '',
         checkbox: false,
@@ -135,8 +183,8 @@ export default {
   },
   methods: {
     createUser() {
-      this.$store.commit('setUserInfo', this.form);
-		localStorage.setItem("user-info", JSON.stringify(this.form));
+      this.$store.commit('setUserInfo', this.form)
+      localStorage.setItem('user-info', JSON.stringify(this.form))
     },
   },
 }
