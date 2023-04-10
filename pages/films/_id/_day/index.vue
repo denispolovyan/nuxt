@@ -41,11 +41,14 @@ export default {
     selectSession(idx) {
       const confirmation = confirm(`Do you want to book ${idx} place ?`)
       if (confirmation) {
+        const sessionId = this.$store.getters.getSelectedSessions.length
         const session = {
           place: idx,
           day: this.sessionInfo.day,
           time: this.sessionInfo.time,
+          price: this.sessionInfo.price,
           name: this.film.name,
+          id: sessionId,
         }
 
         // container for sessions
@@ -77,7 +80,6 @@ export default {
     // films
     const films = this.$store.getters.getFilms
     this.film = films.find((t) => t.id === this.$route.params.id)
-
   },
 }
 </script>

@@ -48,6 +48,10 @@ export default {
 	 setSelectedSessions(state, session){
 		state.selectedSessions.push(session);
 	 },
+	 setNewSelectedSessions(state, session){
+		state.selectedSessions = ""
+		state.selectedSessions = session
+	 },
     deleteUserInfo(state) {
       state.userInfo = ''
     },
