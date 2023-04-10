@@ -3,7 +3,6 @@
     <div class="user-info__body">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">User info</h4>
           <p class="card-text">{{ userInfo.name }}</p>
           <p class="card-text">{{ userInfo.email }}</p>
           <b-button variant="dark" size="sm" @click="deleteUser"
@@ -12,21 +11,32 @@
         </div>
       </div>
       <div class="sessions">
+        <div class="session_main" v-if="$store.getters.getSelectedSessions">
+          <div class="session__name session__item">Name</div>
+          <div class="session__day session__item_narrow">Day</div>
+          <div class="session__time session__item_narrow">Time</div>
+          <div class="session__place session__item_narrow">Place</div>
+          <div class="session__price session__item_narrow">Price</div>
+        </div>
         <div class="sessions-body">
           <div
+			  @click="deleteSession(session)"
             class="session"
             v-for="(session, idx) in $store.getters.getSelectedSessions"
             :key="idx"
           >
-            <div class="session__name">{{ session.name }}</div>
-            <div class="session__day">{{ session.day }}</div>
-            <div class="session__time">{{ session.time }}</div>
-            <div class="session__place">{{ session.place }}</div>
-            <div class="session__price">{{ session.price }}грн</div>
-            <div class="session__button">
-              <b-button variant="dark" size="sm" @click="deleteSession(session)"
-                >Unbook</b-button
-              >
+            <div class="session__name session__item">{{ session.name }}</div>
+            <div class="session__day session__item_narrow">
+              {{ session.day }}
+            </div>
+            <div class="session__time session__item_narrow">
+              {{ session.time }}
+            </div>
+            <div class="session__place session__item_narrow">
+              {{ session.place }}
+            </div>
+            <div class="session__price session__item_narrow">
+              {{ session.price }}грн
             </div>
           </div>
         </div>
@@ -88,29 +98,46 @@ export default {
   margin: 40px 0px;
   padding: 0px 30px;
 }
-.user-info__body {
-  /* display: flex; */
-  justify-content: center;
+
+/* card  */
+.card {
+  display: inline-flex;
+  flex-direction: column;
 }
 
 /* sessions  */
 .sessions {
+  margin: 20px auto;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 16px;
+  max-width: 730px;
 }
+
 .sessions-body {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.session {
+.session_main {
+  text-decoration: underline;
+  font-weight: 500;
   display: flex;
-  gap: 20px;
+  flex: 1 0 200px;
+  margin-bottom: 20px;
 }
-.session__name {
+.session {
+  border-bottom: 2px solid #d9d9da;
+  display: flex;
 }
-.session__day {
+.session:hover {
+	transition-duration: 0.3s;
+  border-bottom: 2px solid #76777c;
 }
-.session__time {
+.session__item {
+  flex: 0 0 200px;
 }
-.session__price {
+.session__item_narrow {
+  flex: 0 0 138px;
 }
 </style>
