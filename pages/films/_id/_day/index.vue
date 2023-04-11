@@ -53,7 +53,7 @@ export default {
         return
       }
       document.getElementById(idx).classList.toggle('selected')
-      const sessionId = this.$store.getters.getSelectedSessions.length
+      const sessionId = this.$store.getters.getSelectedSessions.length + this.selectedPlaces.length
       const session = {
         place: idx,
         day: this.sessionInfo.day,
@@ -122,8 +122,6 @@ export default {
       .filter((t) => t.name === this.film.name)
       .filter((t) => t.dayIdx === this.$route.params.day)
       .forEach((t) => this.currentSessionBookedPlaces.push(t.place))
-
-    console.log(this.currentSessionBookedPlaces)
   },
 }
 </script>
