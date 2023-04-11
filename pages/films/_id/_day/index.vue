@@ -2,7 +2,12 @@
   <div class="sessions">
     <div class="sessions__body">
       <div class="sessions__name">
-        {{ film.name }}
+        <p>{{ film.name }}</p>
+        <p v-if="selectedPlaces.length">
+          <b-button variant="success" @click="selectSessions()"
+            >Book {{ selectedPlaces.length }} ticket(s)</b-button
+          >
+        </p>
       </div>
       <div class="date">
         <p>
@@ -13,11 +18,13 @@
       <div class="hall">
         <div class="hall__place" v-for="(place, idx) in halls" :key="idx">
           <button
-            :disabled="place"
-            @click="selectSession(idx + 1)"
+            :disabled="place || currentSessionBookedPlaces.includes(idx + 1)"
+            @click="addSelectedClass(idx + 1)"
             class="hall__button"
+            :id="idx + 1"
             :class="{
-              hall__place_selected: place,
+              hall__place_selected:
+                place || currentSessionBookedPlaces.includes(idx + 1),
             }"
           >
             {{ idx + 1 }}
@@ -35,32 +42,61 @@ export default {
       hall: [],
       sessionInfo: '',
       film: '',
+      selectedPlaces: [],
+      currentSessionBookedPlaces: [],
     }
   },
   methods: {
-    selectSession(idx) {
-      const confirmation = confirm(`Do you want to book ${idx} place ?`)
-      if (confirmation) {
-        const sessionId = this.$store.getters.getSelectedSessions.length
-        const session = {
-          place: idx,
-          day: this.sessionInfo.day,
-          time: this.sessionInfo.time,
-          price: this.sessionInfo.price,
-          name: this.film.name,
-          id: sessionId,
-        }
+    addSelectedClass(idx) {
+      if (this.selectedPlaces.length >= 4) {
+        alert('You can book max 4 places')
+        return
+      }
+      document.getElementById(idx).classList.toggle('selected')
+      const sessionId = this.$store.getters.getSelectedSessions.length
+      const session = {
+        place: idx,
+        day: this.sessionInfo.day,
+        dayIdx: this.$route.params.day,
+        time: this.sessionInfo.time,
+        price: this.sessionInfo.price,
+        name: this.film.name,
+        id: sessionId,
+      }
+      const coincidence = this.selectedPlaces.filter((t) => t.place === idx)
+      if (coincidence.length) {
+        this.selectedPlaces = this.selectedPlaces.filter((t) => t.place !== idx)
+      } else {
+        this.selectedPlaces.push(session)
+      }
+    },
+    selectSessions() {
+      const bookedPlacesString = this.selectedPlaces.reduce((acc, value) => {
+        return acc + `${value.place} `
+      }, '')
 
+      const confirmation = confirm(
+        `Do you want to book ${bookedPlacesString} place(s)?`
+      )
+
+      if (confirmation) {
         // container for sessions
-        const loadedSessions = this.$store.getters.getSelectedSessions
-        const selectedSessions = Object.assign([], loadedSessions)
-        selectedSessions.push(session)
+        const selectedSessions = Object.assign(
+          [],
+          this.$store.getters.getSelectedSessions
+        )
+
+        this.selectedPlaces.forEach((session) => {
+          selectedSessions.push(session)
+        })
 
         localStorage.setItem(
           'selected-sessions',
           JSON.stringify(selectedSessions)
         )
-        this.$store.commit('setSelectedSessions', session)
+
+        this.$store.commit('setNewSelectedSessions', selectedSessions)
+        this.selectedPlaces = []
       }
     },
   },
@@ -80,6 +116,14 @@ export default {
     // films
     const films = this.$store.getters.getFilms
     this.film = films.find((t) => t.id === this.$route.params.id)
+
+    //  current session booked places
+    this.$store.getters.getSelectedSessions
+      .filter((t) => t.name === this.film.name)
+      .filter((t) => t.dayIdx === this.$route.params.day)
+      .forEach((t) => this.currentSessionBookedPlaces.push(t.place))
+
+    console.log(this.currentSessionBookedPlaces)
   },
 }
 </script>
@@ -124,14 +168,46 @@ export default {
   font-weight: 500;
 }
 .sessions__name {
-  padding: 0px 26px 10px 26px;
+  padding: 0px 26px;
   margin-bottom: 10px;
   font-size: 24px;
   font-weight: 500;
   border-bottom: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+}
+.sessions__name p {
+  margin-bottom: 10px;
 }
 /* selected  */
 .hall__place_selected {
   background-color: #ea5e4b !important;
+}
+
+/* selected places basket  */
+.selected-places {
+  padding: 0px 18px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+}
+.selected-place {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.selected-place__day {
+}
+.selected-place__time {
+}
+.selected-place__place {
+}
+.selected-place__price {
+}
+
+/* toggle  */
+.selected {
+  font-weight: 700;
+  background-color: #43fb84;
 }
 </style>

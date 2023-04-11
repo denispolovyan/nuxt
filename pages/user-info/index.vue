@@ -123,7 +123,6 @@ export default {
 }
 .card__right {
   flex: 0 0 50%;
-  padding-left: 16px;
 }
 /* sessions  */
 .sessions {
