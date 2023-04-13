@@ -1,19 +1,80 @@
 <template>
   <div class="user-info">
     <div class="user-info__body">
-      <div class="card">
+      <div class="card card-info">
         <div class="card__body">
           <div class="card__left">
-            <p class="card-text">{{ userInfo.name }}</p>
-            <p class="card-text">{{ userInfo.email }}</p>
+            <p class="card-text">{{ userInfo.name || 'name' }}</p>
+            <p class="card-text">{{ userInfo.email || 'email' }}</p>
             <b-button variant="dark" size="sm" @click="deleteUser"
               >Sign out</b-button
             >
           </div>
           <div class="card__right">
-            <p class="card-text">Age: {{ userInfo.age }}</p>
-            <p class="card-text">{{ userInfo.phone }}</p>
-            <p class="card-text">City: {{ userInfo.city }}</p>
+            <p class="card-text">Age: {{ userInfo.age || 'age' }}</p>
+            <p class="card-text">{{ userInfo.phone || 'phone' }}</p>
+            <p class="card-text">City: {{ userInfo.city || 'city' }}</p>
+          </div>
+        </div>
+
+        <div class="card__edit">
+          <b-button size="sm" variant="warning" @click="showEditForm = true"
+            >EDIT</b-button
+          >
+        </div>
+      </div>
+
+      <div class="card card-change" v-if="showEditForm == true">
+        <div class="card__body">
+          <div class="card__left_change">
+            <p class="card-text">
+              <b-form-input
+                class="card__input"
+                v-model="userInfo.name"
+                placeholder="Enter your name"
+              ></b-form-input>
+            </p>
+            <p class="card-text">
+              <b-form-input
+                class="card__input"
+                v-model="userInfo.email"
+                placeholder="Enter your email"
+              ></b-form-input>
+            </p>
+            <div class="card__button">
+              <b-button variant="dark" size="sm" @click="setOnChanges"
+                >Save changes</b-button
+              >
+              <b-button variant="dark" size="sm" @click="resetChanges"
+                >Reset changes</b-button
+              >
+              <b-button variant="dark" size="sm" @click="showEditForm = false"
+                >Close</b-button
+              >
+            </div>
+          </div>
+          <div class="card__right_change">
+            <p class="card-text">
+              <b-form-input
+                class="card__input"
+                v-model="userInfo.age"
+                placeholder="Enter your age"
+              ></b-form-input>
+            </p>
+            <p class="card-text">
+              <b-form-input
+                class="card__input"
+                v-model="userInfo.phone"
+                placeholder="Enter your phone"
+              ></b-form-input>
+            </p>
+            <p class="card-text">
+              <b-form-input
+                class="card__input"
+                v-model="userInfo.city"
+                placeholder="Enter your city"
+              ></b-form-input>
+            </p>
           </div>
         </div>
       </div>
@@ -57,12 +118,22 @@ export default {
   data: () => {
     return {
       userInfo: '',
+      showEditForm: '',
     }
   },
   created() {
-    this.userInfo = this.$store.getters.getUserInfo
+    this.userInfo = Object.assign({}, this.$store.getters.getUserInfo)
   },
   methods: {
+    resetChanges() {
+      this.userInfo = Object.assign({}, this.$store.getters.getUserInfo)
+    },
+    setOnChanges() {
+      this.$store.commit('setUserInfo', this.userInfo)
+      localStorage.setItem('user-info', JSON.stringify(this.userInfo))
+      this.userInfo = Object.assign({}, this.$store.getters.getUserInfo)
+      this.showEditForm = false
+    },
     deleteUser() {
       const isDelete = confirm(`Delete user ${this.userInfo.name}`)
       if (isDelete) {
@@ -108,9 +179,13 @@ export default {
 
 /* card  */
 .card {
+  position: relative;
   text-align: center;
   width: 730px;
   margin: 0px auto;
+}
+.card-info {
+  margin-bottom: 20px;
 }
 .card__body {
   padding: 16px;
@@ -123,6 +198,25 @@ export default {
 }
 .card__right {
   flex: 0 0 50%;
+}
+.card__left_change {
+  flex: 0 0 50%;
+  padding-right: 16px;
+  border-right: 1px solid #000;
+}
+.card__right_change {
+  padding-left: 16px;
+  flex: 0 0 50%;
+}
+.card__button {
+  display: flex;
+  justify-content: space-between;
+}
+/* card-edit  */
+.card__edit {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
 }
 /* sessions  */
 .sessions {

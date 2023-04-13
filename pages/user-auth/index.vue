@@ -51,13 +51,13 @@
                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <input
-                              id="form3Example1c"
+                              id="form3Example2c"
                               v-model="form.phone"
                               type="tel"
                               class="form-control"
                               maxlength="30"
                             />
-                            <label class="form-label" for="form3Example1c"
+                            <label class="form-label" for="form3Example2c"
                               >Your Phone</label
                             >
                           </div>
@@ -66,13 +66,13 @@
                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <input
-                              id="form3Example1c"
+                              id="form3Example3c"
                               v-model="form.age"
                               type="text"
                               class="form-control"
                               maxlength="2"
                             />
-                            <label class="form-label" for="form3Example1c"
+                            <label class="form-label" for="form3Example3c"
                               >Your Age</label
                             >
                           </div>
@@ -81,13 +81,13 @@
                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <input
-                              id="form3Example1c"
+                              id="form3Example4c"
                               v-model="form.city"
                               type="text"
                               class="form-control"
                               maxlength="30"
                             />
-                            <label class="form-label" for="form3Example1c"
+                            <label class="form-label" for="form3Example4c"
                               >Your city</label
                             >
                           </div>
@@ -172,9 +172,9 @@ export default {
       form: {
         name: '',
         email: '',
-		  phone: '',
-		  age: '',
-		  city: '',
+        phone: '',
+        age: '',
+        city: '',
         password: '',
         passwordConfirmation: '',
         checkbox: false,
