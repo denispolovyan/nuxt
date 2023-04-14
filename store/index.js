@@ -7,6 +7,7 @@ export default {
       sessions: [],
       halls: [],
       selectedSessions: [],
+      blackTheme: false,
     }
   },
   getters: {
@@ -28,6 +29,9 @@ export default {
     getSelectedSessions(state) {
       return state.selectedSessions
     },
+    getBlackTheme(state) {
+      return state.blackTheme
+    },
   },
   mutations: {
     setUserInfo(state, userInfo) {
@@ -45,13 +49,16 @@ export default {
     setHalls(state, halls) {
       state.halls = halls
     },
-	 setSelectedSessions(state, session){
-		state.selectedSessions.push(session);
-	 },
-	 setNewSelectedSessions(state, session){
-		state.selectedSessions = ""
-		state.selectedSessions = session
-	 },
+    setSelectedSessions(state, session) {
+      state.selectedSessions.push(session)
+    },
+    setNewSelectedSessions(state, session) {
+      state.selectedSessions = ''
+      state.selectedSessions = session
+    },
+    setBlackTheme(state, theme) {
+      state.blackTheme = theme
+    },
     deleteUserInfo(state) {
       state.userInfo = ''
     },

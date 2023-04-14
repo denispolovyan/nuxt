@@ -6,6 +6,20 @@
       </div>
 
       <div class="header-navbar__content">
+        <div>
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+              v-model="darkTheme"
+            />
+            <b-icon-sun v-if="!darkTheme"></b-icon-sun>
+            <b-icon-moon-stars v-if="darkTheme"></b-icon-moon-stars>
+          </div>
+        </div>
+        <div class="header-navbar__item"></div>
         <div class="header-navbar__item" v-if="$route.path === '/films'">
           <b-form-input
             size="sm"
@@ -31,13 +45,19 @@
 </template>
 
 <script>
+import { BIconSun, BIconMoonStars } from 'bootstrap-vue'
 import { films } from '~/api/films'
 import { sessions } from '~/api/sessions'
 import { halls } from '~/api/halls'
 
 export default {
+  components: {
+    BIconMoonStars,
+    BIconSun,
+  },
   data: () => {
     return {
+      darkTheme: false,
       filter: '',
     }
   },
@@ -45,9 +65,12 @@ export default {
     filter() {
       this.$store.commit('setFilteredFilms', this.filter)
     },
+    darkTheme() {
+      this.$store.commit('setBlackTheme', this.darkTheme)
+      localStorage.setItem('black-theme', JSON.stringify(this.darkTheme))
+    },
   },
   created() {
-    // console.log(this.$route.path)
     // router
     this.$router.push('/films')
 
@@ -78,14 +101,23 @@ export default {
         this.$store.commit('setSelectedSessions', t)
       })
     }
+
+    //  color theme
+    const loadedTheme = localStorage.getItem('black-theme')
+    if (loadedTheme) {
+      const parsedLoadedTheme = JSON.parse(loadedTheme)
+      this.$store.commit('setBlackTheme', parsedLoadedTheme)
+      this.darkTheme = parsedLoadedTheme
+    }
   },
 }
 </script>
 
 <style scoped>
+
 .header-navbar {
   padding: 0px 40px;
-  background-color: #2c261e;
+  background-color: #000;
   color: #fff;
 }
 .header-navbar__body {

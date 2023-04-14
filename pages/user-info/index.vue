@@ -114,6 +114,7 @@
 </template>
 
 <script>
+
 export default {
   data: () => {
     return {
@@ -171,7 +172,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .user-info {
   margin: 40px 0px;
   padding: 0px 30px;
@@ -242,10 +243,10 @@ export default {
 .session {
   border-bottom: 2px solid #d9d9da;
   display: flex;
-}
-.session:hover {
-  transition-duration: 0.3s;
-  border-bottom: 2px solid #76777c;
+  &:hover {
+    transition-duration: 0.3s;
+    border-bottom: 2px solid #76777c;
+  }
 }
 .session__item {
   flex: 0 0 200px;
