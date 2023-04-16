@@ -6,9 +6,10 @@
       </div>
 
       <div class="header-navbar__content">
-        <div>
-          <div class="form-check form-switch">
+        <div class="header-navbar__item">
+          <div class="form-check form-switch header-navbar__switcher">
             <input
+              style="margin-right: 7px"
               class="form-check-input"
               type="checkbox"
               role="switch"
@@ -19,7 +20,6 @@
             <b-icon-moon-stars v-if="darkTheme"></b-icon-moon-stars>
           </div>
         </div>
-        <div class="header-navbar__item"></div>
         <div class="header-navbar__item" v-if="$route.path === '/films'">
           <b-form-input
             size="sm"
@@ -31,7 +31,7 @@
         <div class="header-navbar__item">
           <b-button
             size="sm"
-            v-if="$store.getters.getUserInfo"
+            v-if="$store.getters.getUserInfo.name"
             @click="$router.push('/user-info')"
             >Watch profile</b-button
           >
@@ -61,6 +61,44 @@ export default {
       filter: '',
     }
   },
+  methods: {
+    changeColorTheme() {
+      if (this.darkTheme) {
+        // black theme-------------------------------------------
+        document.documentElement.style.setProperty(
+          '--films-bg-color',
+          '#122e46'
+        )
+        document.documentElement.style.setProperty(
+          '--films-card-color',
+          '#ff7643'
+        )
+        document.documentElement.style.setProperty(
+          '--films-text-color',
+          '#e39015'
+        )
+        document.documentElement.style.setProperty(
+          '--user-info-card-color',
+          '#ffea40'
+        )
+      } else {
+        // white theme-------------------------------------------
+        document.documentElement.style.setProperty(
+          '--films-bg-color',
+          '#fff'
+        )
+        document.documentElement.style.setProperty(
+          '--films-card-color',
+          '#ffffb0'
+        )
+        document.documentElement.style.setProperty('--films-text-color', '#000')
+        document.documentElement.style.setProperty(
+          '--user-info-card-color',
+          '#ffffb0'
+        )
+      }
+    },
+  },
   watch: {
     filter() {
       this.$store.commit('setFilteredFilms', this.filter)
@@ -68,6 +106,7 @@ export default {
     darkTheme() {
       this.$store.commit('setBlackTheme', this.darkTheme)
       localStorage.setItem('black-theme', JSON.stringify(this.darkTheme))
+      this.changeColorTheme()
     },
   },
   created() {
@@ -109,12 +148,12 @@ export default {
       this.$store.commit('setBlackTheme', parsedLoadedTheme)
       this.darkTheme = parsedLoadedTheme
     }
+    this.changeColorTheme()
   },
 }
 </script>
 
 <style scoped>
-
 .header-navbar {
   padding: 0px 40px;
   background-color: #000;
@@ -131,11 +170,17 @@ export default {
 .header-navbar__logo_text {
   color: #fff;
   text-decoration: none;
+  white-space: nowrap;
 }
 .header-navbar__content {
   align-items: center;
   display: flex;
-  gap: 10px;
+  gap: 20px;
+}
+.header-navbar__switcher {
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 @media (max-width: 1050px) {
   .header-navbar {
@@ -143,6 +188,21 @@ export default {
   }
   .header-navbar__filter {
     width: 130px;
+  }
+}
+@media (max-width: 1050px) {
+  .header-navbar__content {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+  }
+  .header-navbar__switcher {
+    gap: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .header-navbar__filter {
+    width: 100px;
   }
 }
 </style>

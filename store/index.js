@@ -8,6 +8,7 @@ export default {
       halls: [],
       selectedSessions: [],
       blackTheme: false,
+      windowSize: '',
     }
   },
   getters: {
@@ -31,6 +32,9 @@ export default {
     },
     getBlackTheme(state) {
       return state.blackTheme
+    },
+    getWindowSize(state) {
+      return state.windowSize
     },
   },
   mutations: {
@@ -58,6 +62,9 @@ export default {
     },
     setBlackTheme(state, theme) {
       state.blackTheme = theme
+    },
+    setWindowSize(state, size) {
+      state.windowsize = size
     },
     deleteUserInfo(state) {
       state.userInfo = ''

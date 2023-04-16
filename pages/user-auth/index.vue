@@ -1,7 +1,7 @@
 <template>
   <div class="user-auth">
     <div class="user-auth__body">
-      <section class="vh-100">
+      <section class=" user-auth__card">
         <div class="container h-90">
           <div
             class="row d-flex justify-content-center align-items-center h-100"
@@ -11,7 +11,7 @@
                 <div class="card-body p-md-3">
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                      <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                      <p class="text-center h1 fw-bold mb-5 mx-2 mx-md-4 mt-4">
                         Sign up
                       </p>
 
@@ -126,7 +126,7 @@
                         </div>
 
                         <div
-                          class="form-check d-flex justify-content-center mb-5"
+                          class="form-check d-flex justify-content-center mb-2"
                         >
                           <input
                             id="form2Example3c"
@@ -192,7 +192,14 @@ export default {
 
 <style scoped>
 .user-auth {
-  margin: 40px 0px;
-  padding: 0px 30px;
+  min-height: calc(100vh - 60px);
+  background-color: var(--films-bg-color);
+  padding: 40px 30px;
+  font-weight: 600;
+}
+.card-body {
+  border-radius: 25px;
+  height: 800px;
+  background-color: var(--user-info-card-color);
 }
 </style>

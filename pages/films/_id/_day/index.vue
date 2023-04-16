@@ -4,7 +4,10 @@
       <div class="sessions__name">
         <p>{{ film.name }}</p>
         <p v-if="selectedPlaces.length">
-          <b-button variant="success" @click="selectSessions()"
+          <b-button
+            variant="success"
+            @click="selectSessions()"
+            class="session__book"
             >Book {{ selectedPlaces.length }} ticket(s)</b-button
           >
         </p>
@@ -53,7 +56,9 @@ export default {
         return
       }
       document.getElementById(idx).classList.toggle('selected')
-      const sessionId = this.$store.getters.getSelectedSessions.length + this.selectedPlaces.length
+      const sessionId =
+        this.$store.getters.getSelectedSessions.length +
+        this.selectedPlaces.length
       const session = {
         place: idx,
         day: this.sessionInfo.day,
@@ -128,7 +133,12 @@ export default {
 
 <style scoped>
 .sessions {
+  min-height: calc(100vh - 60px);
+  background-color: var(--films-bg-color);
+  color: var(--films-text-color);
   padding: 40px;
+}
+.sessions__body {
   margin: 0px auto;
   max-width: 800px;
 }
@@ -149,7 +159,7 @@ export default {
   width: 60px;
   border: 1px solid #000;
   border-radius: 40px;
-  font-weight: 500;
+  font-weight: 700;
 }
 .hall__button:hover {
   transition-duration: 0.5s;
@@ -173,6 +183,7 @@ export default {
   border-bottom: 1px solid #000;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .sessions__name p {
   margin-bottom: 10px;
@@ -194,18 +205,44 @@ export default {
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.selected-place__day {
-}
-.selected-place__time {
-}
-.selected-place__place {
-}
-.selected-place__price {
-}
 
 /* toggle  */
 .selected {
-  font-weight: 700;
   background-color: #43fb84;
+}
+
+@media (max-width: 1050px) {
+  .sessions {
+    padding: 20px;
+  }
+}
+@media (max-width: 850px) {
+  .hall__button {
+    height: 32px;
+    width: 50px;
+  }
+  .date {
+    padding: 0px 2%;
+  }
+  .sessions__name {
+    padding: 0px 2%;
+  }
+}
+@media (max-width: 500px) {
+  .hall__button {
+    height: 20px;
+    width: 30px;
+  }
+  .date p {
+    font-size: 16px;
+    padding: 0px 2%;
+  }
+  .sessions__name {
+    font-size: 18px;
+    padding: 0px 2%;
+  }
+  .session__book {
+    font-size: 12px;
+  }
 }
 </style>

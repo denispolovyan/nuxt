@@ -13,7 +13,11 @@
           {{ film.name }}
         </div>
         <div class="film-card__button">
-          <button class="btn btn-primary" @click="switchToCurrentFilm(film.id)">
+          <button
+            class="btn btn-warning"
+            style="font-weight: 500"
+            @click="switchToCurrentFilm(film.id)"
+          >
             More info
           </button>
         </div>
@@ -39,7 +43,10 @@ export default {
 
 <style scoped>
 .films {
+  background-color: var(--films-bg-color);
+  min-height: calc(100vh - 60px);
   padding: 40px;
+  background-color: var(--films-bg-color);
 }
 .films__body {
   display: flex;
@@ -47,13 +54,14 @@ export default {
   justify-content: space-between;
   gap: 20px 15px;
 }
-
 .film-card {
-  background-color: #f3f3f3;
+  position: relative;
+  background-color: var(--films-card-color);
   display: flex;
   flex: 0 0 24%;
   flex-direction: column;
-  border-bottom: 3px solid #000;
+  font-weight: 600;
+  font-size: 24px;
 }
 .film-card__img img {
   object-fit: cover;
@@ -67,7 +75,7 @@ export default {
 }
 .film-card__name {
   display: flex;
-  margin: 0px 0px 5px 20px;
+  margin: 0px 0px 15px 20px;
 }
 .film-card__button {
   margin: 0px 0px 20px 20px;
@@ -100,7 +108,8 @@ export default {
   }
   .film-card {
     display: block;
-    margin-bottom: 20px;
+    padding-bottom: 5px;
+	 margin-bottom: 20px;
   }
   .film-card__img img {
     width: 100%;
@@ -108,6 +117,9 @@ export default {
   }
   .films {
     padding: 20px;
+  }
+  .film-card__button {
+    margin: 0px 0px 15px 20px;
   }
 }
 </style>
